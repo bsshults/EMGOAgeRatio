@@ -1,0 +1,324 @@
+---
+header-includes:
+- \usepackage{subcaption}
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \setlength{\parskip}{4ex}
+output:
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+require(readxl)
+require(knitr)
+require(pander)
+options(scipen=999)
+knitr::opts_chunk$set(echo = FALSE)
+#this puts commas in the numbers globally
+knitr::knit_hooks$set(inline = function(x) {
+prettyNum(x, big.mark=",")})
+```
+
+```{r}
+#popdat contains the fall population estimates (1979-2015) by segment converted to lagoons from Stehn spreadsheet (T:\EMGO\fall age ratio survey\2014\Photo Count Data\EMGO fall photo data 1985 2016.xls) and Wilson's report (2015)
+popdat <- read.csv("c://Users//bshults//Desktop//emgofallpopests.csv", header = TRUE)
+
+#dat contains the photo data from Stehns spreadsheet (T:\EMGO\fall age ratio survey\2014\Photo Count Data\EMGO fall photo data 1985 2016.xls)
+dat <- read.csv("c://Users//bshults//Desktop//photocounts.csv" , header = TRUE)
+#trim to correct dimensions, remove year = 1900 and zone = c(NA and 0)
+dat = dat[dat$year!=1900 & dat$Zone!="0" & dat$Zone!="#N/A" & dat$valid==1, ]
+dat$RDate <- as.Date(paste(dat$mo,"-", dat$da, "-", dat$year, sep=""), format = "%m-%d-%Y")
+dat$Zone=factor(dat$Zone)
+n.adults2 <- by(dat$adt, list(dat$Zone, dat$year), sum, na.rm = TRUE)
+attributes(n.adults2)$class <- "matrix"
+n.juv2 <- by(dat$juv, list(dat$Zone, dat$year), sum,  na.rm = TRUE)
+attributes(n.juv2)$class <- "matrix"
+n.total <- n.adults2 + n.juv2
+n.photos <- table(dat$year)
+ar2 <- apply(n.juv2, 2, sum, na.rm = TRUE)/apply(n.total, 2, sum, na.rm = TRUE)
+#variance of ar2
+#binomial variance, just for fun, this is not correct for this application
+se2.1 <- sqrt(ar2*(1 - ar2)/apply(n.total, 2, sum, na.rm = TRUE))
+#from Stehn Excel sheet, 
+#  presumably from Cochran 1963, p. 65, eq. 3.26
+#self weighted
+sum.n.tot.sq <- apply(by((dat$juv + dat$adt)^2, list(dat$Zone, dat$year), sum,  na.rm = TRUE), 
+                      2, sum, na.rm = TRUE)
+sum.n.juv.sq <- apply(by(dat$juv^2, list(dat$Zone, dat$year), sum,  na.rm = TRUE), 
+                      2, sum, na.rm = TRUE)
+sum.juv.tot.cp <- by(dat$juv*(dat$juv + dat$adt), list(dat$Zone, dat$year), sum,  na.rm = TRUE)
+sum.juv.tot.cp <- apply(sum.juv.tot.cp, 2, sum, na.rm = TRUE)
+se2 <- sum.n.juv.sq + sum.n.tot.sq * (ar2^2) - 2 * ar2 * sum.juv.tot.cp
+se2 <- sqrt(se2/( (n.photos-1) * n.photos * (apply(n.total, 2, sum, na.rm = TRUE)/n.photos)^2 ))
+dat$sdate=strftime(dat$RDate, format = "%d %b")
+
+#this chunk gets the dates formatted for table 1
+
+year.dates=data.frame(year=sort(unique(dat$year)), dates=rep("hold", length(unique(dat$year))))
+year.dates$dates=as.character(year.dates$dates)
+for (i in 1:length(unique(dat$year))) {
+  for (j in 1:length(sort(unique(dat$mo[dat$year==unique(dat$year)[i]])))) {
+  
+    temp=sort(unique(dat$sdate[dat$year==unique(dat$year)[i] & dat$mo==sort(unique(dat$mo[dat$year==unique(dat$year)[i]]))[j]]))
+  
+    for (k in 1:length(temp)){
+      
+      if(k != length(temp)){
+        
+        if(k == 1){temp2 = substring(temp[1],1,2)
+        temp2=paste(temp2,",", sep="")
+        }
+        
+        if(k != 1){temp2 = paste(temp2, substring(temp[k],1,2), ", " , sep="")}
+      }
+        
+      if(k == length(temp) & k != 1){temp2 = paste(temp2, temp[k], sep="")}  
+      if(k == length(temp) & k == 1){temp2=temp[1]}
+        
+      }
+      
+    if(j==1){temp3=temp2}
+    if(j == length(sort(unique(dat$mo[dat$year==unique(dat$year)[i]]))) & j==1){year.dates$dates[i]=temp2}
+    if(j==2){year.dates$dates[i]=paste(temp3, "; ", temp2, sep="")}
+    rm(temp2)
+    
+  }
+}
+
+#this is the file for table 1: annual survey crew and timing
+crew <- read.csv("c://Users//bshults//Desktop//pilotsobservers.csv" , header = TRUE)
+
+#this is the file for table 2 to fill in hatch info
+hatch <- read.csv("c://Users//bshults//Desktop//hatchdata.csv" , header= TRUE)
+
+
+#set up some objects for text
+c.year <- as.character(max(dat$year))
+c.photos <- n.photos[c.year]
+c.total <- sum(n.total[,c.year], na.rm = TRUE)
+c.juv <- apply(n.juv2, 2, sum, na.rm = TRUE)[c.year]
+
+#days post hatch for text
+c.hatchyear <-as.character(max(hatch$year))
+c.meanage=hatch$meanage[hatch$year==c.hatchyear]
+
+#current year range of proportion of juvenile values by lagoon for text
+n.prop=n.juv2/n.total
+n.prop[n.prop==NA]=0
+
+newmax=round(max(n.prop[,dim(n.prop)[2]],na.rm=TRUE),3)
+newmin=round(min(n.prop[,dim(n.prop)[2]],na.rm=TRUE),3)
+#all years proportion of juvenile values-range
+n.propmin=round(min(n.prop[n.prop>0], na.rm=TRUE),3)
+n.propmax=round(max(n.prop, na.rm=TRUE),3)
+```
+
+**\LARGE{Emperor Goose Photographic Age-Ratio Survey, 2016}** \hfill
+
+\large
+\textbf{Brad S. Shults}, U.S. Fish and Wildlife Service, Migratory Bird Management, 1011 E. Tudor Rd., Anchorage, AK 99503  
+\textbf{Dennis Marks}, U.S. Fish and Wildlife Service, Migratory Bird Management, 1011 E. Tudor Rd., Anchorage, AK 99503
+
+**\large{ABSTRACT:}**
+\large{Emperor geese (\textit{Chen canagica}) were photographed between `r strftime( min(dat$RDate[dat$year==as.numeric(c.year)]), "%d")` and `r strftime( max(dat$RDate[dat$year==as.numeric(c.year)]), "%d %B")` 2016 along the shorelines of seven lagoons on the north side of the Alaska Peninsula to estimate the annual proportion of hatching-year (HY) birds. Age classification of HY vs. adult geese was based on the gray/black head and neck plumage evident on juvenile geese. In 2016, we classified `r c.total` geese from `r c.photos` photographs. We counted `r c.juv` HY birds resulting in a self-weighted ratio estimate of `r round(ar2[c.year],3)` (SE = `r round(se2[c.year],3)`).} 
+
+\textbf{KEY WORDS: }aerial survey, Alaska, emperor goose, \textit{Chen canagica}, age-ratio, photography, Alaska Peninsula
+
+\hfill\textit {March 2017}
+
+\textbf{INTRODUCTION}\break
+From mid-September through October, most of the emperor goose (\textit{Chen canagica}) population congregates in 7 lagoons on the north side of the Alaska Peninsula (Petersen and Gill 1982; Fig. 1).  Staging geese provide an opportunity to sample the population to determine an index of annual productivity because hatching year (HY) Emperor geese retain gray/black plumage on their head and neck that contrasts with the complete white head plumage of adult geese (Fig. 2 ). This plumage difference is used to age classify geese (i.e. HY vs. adult) in aerial photographs.  
+  
+  \begin{figure}[h]
+\includegraphics{figure_1_lagoon_map_300dpi.jpg}
+\caption{Seven primary fall staging areas for emperor geese along the north side of the Alaska Peninsula.}
+\end{figure}
+
+\begin{figure}[h] 
+\includegraphics{IMG_8554_anno.jpg}
+\caption{Head plumage characteristics of hatch year and adult emperor geese.}
+\end{figure}
+ 
+  
+  The primary objective of this study was to calculate an annual estimate of the proportion of HY emperor geese in the fall staging population. These data provide an index to annual production that is defined as the number of hatched young that survive until October and is expressed as a proportion of the total birds classified.  In combination with a fall population abundance survey to weight the lagoon-specific age-ratio estimates, these data are necessary to measure the progress towards meeting the management objective of a fall juvenile age ratio $\geq$ 20% as specified in the Pacific Flyway Management Plan for the Emperor Goose (Pacific Flyway Council 2016) . The annual age ratio of emperor geese has been monitored with this survey since 1985.
+
+
+
+\textbf{METHODS}\break
+We conducted the photographic age-ratio survey in seven primary sites along the north side of the Alaska Peninsula including Egegik Bay, Ugashik Bay, Cinder River, Port Heiden, Seal Islands, Nelson Lagoon, and Izembek Lagoon (Fig. 1).  We attempted to fly the aerial photographic survey when HY geese were approximately 100 days of age to ensure that we could differentiate between the age classes before the juveniles acquired their adult, head plumage. In 2016, the survey was flown in an amphibious-equipped Cessna 206 (N77554). The aircraft was flown at approximately 500-1000 feet above the ground to locate geese. After spotting groups of emperor geese on beaches or flying ahead of the aircraft, the pilot positioned the aircraft to arc around the flock while attempting to provide the best possible distance, angle, and light for the photographer who was located directly behind the pilot. Aircraft maneuvering decisions were made when a flock was first spotted and verbally coordinated with the photographer to maximize photographic opportunities. Once found, we typically descended to 300-400 feet AGL to photograph flocks. The photographer captured digital images of geese through the aircraft's window port with a hand-held digital SLR camera. Taking photographs from the left rear-seat made it easier for the pilot (i.e., seated in theleft front seat) to appropriately position the aircraft relative to the flock.  
+  
+\textbf{Camera Setting--}
+We used a Canon EOS 5D Mark II camera with an image-stabilized 70-200 mm lens. The LCD display allowed for a rapid assessment of image quality. Image size was 5616 x 3744 pixels, and file size ranged from 5-12 megabytes. The photographer recorded the: Date, Time, Start Photograph #, End Photograph # , and Location (e.g.,  9/27/11, 16:25 4927-4970, Egegik Bay). Camera settings for the Canon 5D were:
+
+\begin{enumerate}
+\setlength{\parskip}{1ex}
+   \item Camera set to take the highest quality JPG image.
+   \item AF mode set to A1 Servo.
+   \item Mode set to shutter priority (TV) and shutter speed set to 1250.
+   \item Metering mode set to Evaluative Metering.
+   \item ISO set at 800.
+\end{enumerate}
+
+\textbf{Photo Analysis--}
+We viewed digital images in Adobe Photoshop\copyright   on a computer with dual 19-inch LCD monitors set at 1280 x 1024 resolution.  We used a grid overlay for each photograph and magnified the image as needed to adequately distinguish the age class of each goose. We used the \textit{Count Tool} to mark each counted goose as adult, juvenile, or unknown (Fig. 3). We did not classify geese on any photographs where the majority of bird images were too small or excessively blurred to reliably determine age class.  
+
+\begin{figure}
+\centering
+\begin{subfigure}[h]{0.7\textwidth}
+\includegraphics[width=\textwidth]{figure3a.jpg}
+\end{subfigure}
+\\
+\begin{subfigure}[h]{0.7\textwidth}
+\includegraphics[width=\textwidth]{figure3b.jpg}
+\end{subfigure}
+\caption{Typical photograph with grid overlay (top) and count tool labels (bottom).}
+\end{figure}
+
+\textbf{Statistical Analysis--}
+Stehn and Wilson (2014) describe 2 different estimators (i.e., self-weighted and count-weighted). The count-weighted estimate relies on an annual, fall population count of emperor geese in the 7 sampling areas along the Alaska Peninsula. The fall count was not conducted in 2016 so only the self-weighted estimate was calculated. For reference, both estimators are described below.
+
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{4em}
+\underline{\textit{Self-Weighted Estimate}}
+\setlength{\parindent}{0in}
+The self-weighted estimate is simply the ratio of total HY to total adults counted across all strata and is appropriate when the sampling intensity or total birds counted in photographs within each stratum is proportional to the population size estimated within each stratum from the independent, fall aerial population survey. In short, photographic survey effort should be allocated proportionally to each stratum based on the fall distribution of birds among the 7 strata.  
+
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{4em}
+\underline{\textit{Count-Weighted Estimate}}
+\setlength{\parindent}{0in}
+The mean ratio of juveniles/adults for each stratum was calculated from all photos in each stratum (i.e., each of seven lagoons). The resulting seven strata ratios were then weighted by the proportion of the total fall population observed in each stratum from the similarly timed, independent aerial survey count (USFWS unpubl. data). The resulting weighted stratum estimates were then summed to yield the estimate. Variances of the mean age ratio per stratum were weighted in proportion to squared population counts.
+
+\setlength{\parskip}{4ex}
+\textbf{RESULTS}\break
+Flights were conducted `r strftime( min(dat$RDate[dat$year==as.numeric(c.year)]), "%d")` and `r strftime( max(dat$RDate[dat$year==as.numeric(c.year)]), "%d %B")` 2016 with pilot B. Shults and photographer Dennis Marks (Table 1). Survey timing was approximately `r c.meanage` days after the average hatch date for emperor geese on the Yukon-Kuskokwim delta (Fischer and Stehn 2016). Total flight time to complete the survey between King Salmon and Cold Bay was 7 hrs.  
+
+  We classified `r c.total` geese on `r c.photos` photographs. We counted an average of `r round(c.total/c.photos,1)` birds/photograph. We identified `r c.juv` juvenile geese resulting in a self-weighted juvenile : adult ratio of `r round(ar2[c.year],3)` (Fig. 4). For lagoons Where geese were observed, ratio estimates varied between `r newmin` and `r newmax` (Table 3).  
+
+\newpage
+```{r fig.cap="Estimates and standard errors of the proportion of juveniles for each year."}
+plot(as.numeric(names(ar2)), ar2, ylim=c(0, 0.4), xlab="Year", ylab="Proportion Juvenile", pch=16)
+arrows(x0=as.numeric(names(ar2)), x1=as.numeric(names(ar2)), y0=ar2-2*se2, y1=ar2+2*se2, length=0, lwd=2, col="black")
+points(as.numeric(names(ar2)), ar2, pch=16)
+lines(as.numeric(names(ar2)), ar2,col="blue")
+```
+\begin{figure}
+\centering
+\end{figure}
+\textbf{CONCLUSION}\break
+The self-weighted estimate was 48% below the long-term (1985-2015) mean of `r round(mean(ar2),3)` and the lowest ratio observed since the survey began in 1985 (Fig. 4).  Although the 2016 survey was 14 days earlier (i.e., Day 259) than the mean day of year of previous surveys (i.e., Day `r round(mean(hatch$meandoyphotos),0)`), the estimated mean age of juveniles was only 5 days younger than the estimated mean age of young for all surveys (i.e., `r c.meanage` vs. `r round(mean(hatch$meanage),0)` days). Survey timing was conducive to confidently distinguish between juvenile and adult head plumage in photographs. Supporting data from the 2016 Yukon-Kuskokwim Delta Nest Plot Survey showed that emperor geese produced low numbers of nests and eggs, had poor nest success and very low clutch sizes (Fischer et al. 2017).  The current Pacific Flyway management objective is a minimum ratio of 0.20 (Pacific Flyway Council 2016).
+
+\textbf{ACKNOWLEDGEMENTS}\break
+Funding for this survey was provided by the U.S. Fish and Wildlife Service (USFWS). We thank the staff of the Alaska Peninsula/Becharof and Izembek National Wildlife Refuges for providing essential logistic support.  We also thank Chuck Frost and Eric Osnas for data analyses and reporting assistance.
+
+
+\textbf{REFERENCES}
+
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{1ex}
+
+Fischer, J. B., Wlliams, A. R., and R. A. Stehn.  2017.  Nest population size and potential production of geese and spectacled eiders on the Yukon-Kuskokwim Delta, Alaska, 1985-2016.  Unpubl. Rep., U.S. Fish and Wildlife Service, Anchorage, AK.
+
+Pacific Flyway Council. 2016. Management Plan for the Emperor Goose. Pacific Flyway Council, care of U.S. Fish and Wildlife Service, Division of Migratory Bird Management, Vancouver, Washington. 35 pp.
+
+Petersen, M. R. and R. E. Gill, Jr.  1982.  Population and status of emperor geese along the north side of the Alaska Peninsula.  Wildfowl 33: 31-38.  
+
+Stehn, R. A. and H.M. Wilson. 2014. Monitoring Emperor geese by age ratio and survey counts, 1985-2013. Unpublished Report. U.S. Fish and Wildlife Service, Anchorage, Alaska. 12pp.  
+
+\newpage
+```{r}
+#This is the Table for When and who
+n.rows = length(unique(dat$year))
+
+table1 <- data.frame(
+  "Year" = unique(dat$year), 
+  "Photograph Dates" = year.dates$dates,
+  "Pilot" = crew$pilot,
+  "Photographer" = crew$photographer
+  )
+colnames(table1) <- c("**Year**", "**Photograph\nDates**", "**Pilot**", "**Photographer**")
+row.names(table1) <- NULL
+```
+```{r}
+
+pander(table1, style="multiline", split.cells = c("5%","45%","25%","25%"), split.table = 80, round=3, justify="left", 
+       keep.line.breaks=TRUE, caption = "Annual Survey Crew and Timing, 1985-2016, Alaska Peninsula.")
+```
+
+\setlength{\parindent}{0in}
+\setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt}
+\noindent
+\newpage
+
+```{r}
+n.rows = length(unique(dat$year))
+
+table1 <- data.frame(
+  "Year" = unique(as.character(dat$year),4),
+  "Number of Photos" = as.vector(by(dat$valid, dat$year, length)),
+  "Mean DOY Photo" = as.vector(round(by(dat$DOY, dat$year, mean),0)),
+  "Mean DOY Hatch" = hatch$meanhatchdoy,
+  "Mean Age of young (days)" = hatch$meanage,
+  "Total Juveniles" = apply(n.juv2, 2, sum, na.rm=TRUE),
+  "Total Geese" = apply(n.total, 2, sum, na.rm=TRUE),
+  "Self-weighted Estimate" = ar2,
+  "SE2" = as.numeric(se2),
+  "Count-weighted Estimate" = rep(NA, n.rows),
+  "SE" = rep(NA, n.rows)
+)
+colnames(table1) <- c("**Year**", "**Number of\nPhotos**", "**Mean DOY\nPhoto**", "**Mean DOY\nHatch**", "**Mean Age\nof young\n(days)**", "**Total\nJuveniles**", "**Total\nGeese**", "**Self-weighted\nEstimate**", "**SE**", "**Count-weighted Estimate**", "**SE**")
+row.names(table1) <- NULL
+```
+
+```{r}
+panderOptions("big.mark", ",")
+panderOptions('keep.trailing.zeros',T)
+
+pander(table1, style="multiline", justify="right", split.cells = 15, split.table = Inf, round=3, caption = "Survey timing, sample size, and average proportion of juvenile emperor geese counted in photographs, 1985-2016, Alaska Peninsula.", keep.line.breaks=TRUE )
+```
+\setlength{\parindent}{0in}
+\setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt}
+\noindent
+
+
+```{r}
+  n.prop=t(n.prop)
+colnames(n.prop) <- c("**Egegik**","**Ugashik**","**Cinder River**","**Port Heiden**","**Seal Islands**","**Nelson Lagoon**","**Izembek**")
+```
+```{r}
+pander(n.prop, style="multiline", split.cells = 15, split.table = Inf, round=3, justify="right", 
+       keep.line.breaks=TRUE,caption = "Estimates of the proportion of juveniles at each staging area along the Alaska Peninsula 1985-2016.",keep.trailing.zeros = panderOptions("keep.trailing.zeros"))
+```
+
+
+
+```{r}
+#this is the table with total geese counted by year by lagoon
+
+panderOptions("big.mark", ",")
+panderOptions('keep.trailing.zeros',T)
+
+```
+\setlength{\parindent}{0in}
+\setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt}
+\noindent
+\newpage
+
+
+```{r}
+  n.total=t(n.total)
+
+colnames(n.total) <- c("**Egegik**","**Ugashik**","**Cinder River**","**Port Heiden**","**Seal Islands**","**Nelson Lagoon**","**Izembek**")
+```
+```{r}
+pander(n.total, style="multiline", split.cells = 15, split.table = Inf, round=3, justify="right", 
+       keep.line.breaks=TRUE,caption = "Total emperor geese photographed and classified at each staging area along the Alaska Peninsula 1985-2016.",keep.trailing.zeros = panderOptions("keep.trailing.zeros"))
+```
