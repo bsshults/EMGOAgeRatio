@@ -26,10 +26,11 @@ prettyNum(x, big.mark=",")})
 
 ```{r}
 #popdat contains the fall population estimates (1979-2015) by segment converted to lagoons from Stehn spreadsheet (T:\EMGO\fall age ratio survey\2014\Photo Count Data\EMGO fall photo data 1985 2016.xls) and Wilson's report (2015)
-popdat <- read.csv("c://Users//bshults//Desktop//emgofallpopests.csv", header = TRUE)
+popdat <- read.csv("emgofallpopests.csv", header = TRUE)
+popdat <- popdat[popdat$year >= 1985, c("X1","X2","X3","X4","X5","X6","X7")]
 
 #dat contains the photo data from Stehns spreadsheet (T:\EMGO\fall age ratio survey\2014\Photo Count Data\EMGO fall photo data 1985 2016.xls)
-dat <- read.csv("c://Users//bshults//Desktop//photocounts.csv" , header = TRUE)
+dat <- read.csv("photocounts.csv" , header = TRUE)
 #trim to correct dimensions, remove year = 1900 and zone = c(NA and 0)
 dat = dat[dat$year!=1900 & dat$Zone!="0" & dat$Zone!="#N/A" & dat$valid==1, ]
 dat$RDate <- as.Date(paste(dat$mo,"-", dat$da, "-", dat$year, sep=""), format = "%m-%d-%Y")
@@ -56,6 +57,29 @@ sum.juv.tot.cp <- apply(sum.juv.tot.cp, 2, sum, na.rm = TRUE)
 se2 <- sum.n.juv.sq + sum.n.tot.sq * (ar2^2) - 2 * ar2 * sum.juv.tot.cp
 se2 <- sqrt(se2/( (n.photos-1) * n.photos * (apply(n.total, 2, sum, na.rm = TRUE)/n.photos)^2 ))
 dat$sdate=strftime(dat$RDate, format = "%d %b")
+
+##Calculate count-weighted estimates
+#mean
+ar.zone <- n.juv2/n.total
+#variance and sd
+sum.n.tot.sq <- by((dat$juv + dat$adt)^2, list(dat$Zone, dat$year), sum,  na.rm = TRUE)
+attributes(sum.n.tot.sq)$class <- "matrix"
+sum.n.juv.sq <- by(dat$juv^2, list(dat$Zone, dat$year), sum,  na.rm = TRUE)
+attributes(sum.n.juv.sq)$class <- "matrix"
+sum.juv.tot.cp <- by(dat$juv*(dat$juv + dat$adt), list(dat$Zone, dat$year), sum,  na.rm = TRUE)
+attributes(sum.juv.tot.cp)$class <- "matrix"
+var.zone <- sum.n.juv.sq + sum.n.tot.sq * (ar.zone^2) - 2 * ar.zone * sum.juv.tot.cp
+#need by n.photos by zone
+n.photos.zone <-  table(dat$Zone, dat$year)
+#var of zone-specific estimate
+var.zone <- var.zone/( (n.photos.zone-1) * n.photos.zone * (n.total/n.photos.zone)^2 )
+var.zone <- var.zone[, 1:31]  #remove years after 2015
+#sum var across zones and take sqrt
+pop.total <- matrix(apply(popdat, 1,sum), dim(var.zone)[1], dim(var.zone)[2], byrow=TRUE)
+se.cw <- sqrt( apply(var.zone*(t(popdat)/pop.total)^2, 2, sum, na.rm = TRUE)) 
+## Find age ratio weighted by zone count
+ar.cw <- apply(ar.zone[,1:31]*(t(popdat)/pop.total), 2, sum, na.rm = TRUE)
+
 
 #this chunk gets the dates formatted for table 1
 
@@ -91,10 +115,10 @@ for (i in 1:length(unique(dat$year))) {
 }
 
 #this is the file for table 1: annual survey crew and timing
-crew <- read.csv("c://Users//bshults//Desktop//pilotsobservers.csv" , header = TRUE)
+crew <- read.csv("pilotsobservers.csv" , header = TRUE)
 
 #this is the file for table 2 to fill in hatch info
-hatch <- read.csv("c://Users//bshults//Desktop//hatchdata.csv" , header= TRUE)
+hatch <- read.csv("hatchdata.csv" , header= TRUE)
 
 
 #set up some objects for text
@@ -108,8 +132,8 @@ c.hatchyear <-as.character(max(hatch$year))
 c.meanage=hatch$meanage[hatch$year==c.hatchyear]
 
 #current year range of proportion of juvenile values by lagoon for text
-n.prop=n.juv2/n.total
-n.prop[n.prop==NA]=0
+n.prop= n.juv2/n.total
+n.prop[is.na(n.prop)]=0
 
 newmax=round(max(n.prop[,dim(n.prop)[2]],na.rm=TRUE),3)
 newmin=round(min(n.prop[,dim(n.prop)[2]],na.rm=TRUE),3)
@@ -193,13 +217,30 @@ Stehn and Wilson (2014) describe 2 different estimators (i.e., self-weighted and
 \setlength{\parindent}{4em}
 \underline{\textit{Self-Weighted Estimate}}
 \setlength{\parindent}{0in}
-The self-weighted estimate is simply the ratio of total HY to total adults counted across all strata and is appropriate when the sampling intensity or total birds counted in photographs within each stratum is proportional to the population size estimated within each stratum from the independent, fall aerial population survey. In short, photographic survey effort should be allocated proportionally to each stratum based on the fall distribution of birds among the 7 strata.  
+The self-weighted estimate is simply the ratio of total HY to total adults counted across all photographs within each strata  
+
+$R = \frac{ \sum_{ij} J_{ij} }{ \sum_{ij} N_{ij} }$.  
+
+Where $J$ is the number of juveniles counted, $N$ is the total (adult and juvenile) number of emperor geense counted, $i$ is the index for strata ($i = \{1, ..., S\}$), and $j$ is the index for photograph ($j = \{1, ..., P_s\}$ and $s = \{1, ...7\}$ is the index for stata). The standard deviation of this estimate was calculated as in Cochran (1963; p. 65, eq. 3.26)
+
+$SD(R) = \sqrt { \frac{1 - f}{P\hat{N}^2} \frac{\sum_{ij} J_{ij}^2 - 2R \sum_{ij} J_{ij} N_{ij} + R^2 \sum_{ij}N_{ij}^2}{(P - 1)} }$.
+
+where $P = \sum_s P_s$, $\hat{N}=\sum_i{N_i}/P$, and we assumed that the sampling faction was zero $f = 0$. 
+
+The self-weighted estimate is appropriate when the sampling intensity or total birds counted in photographs within each stratum is proportional to the population size estimated within each stratum from the independent, fall aerial population survey. In short, photographic survey effort should be allocated proportionally to each stratum based on the fall distribution of birds among the 7 strata.  
 
 \setlength{\parskip}{1ex}
 \setlength{\parindent}{4em}
 \underline{\textit{Count-Weighted Estimate}}
 \setlength{\parindent}{0in}
-The mean ratio of juveniles/adults for each stratum was calculated from all photos in each stratum (i.e., each of seven lagoons). The resulting seven strata ratios were then weighted by the proportion of the total fall population observed in each stratum from the similarly timed, independent aerial survey count (USFWS unpubl. data). The resulting weighted stratum estimates were then summed to yield the estimate. Variances of the mean age ratio per stratum were weighted in proportion to squared population counts.
+The mean ratio of juveniles to adults was calculated, as above, for each of seven strata, $R_s$. The resulting seven strata ratios were then weighted by the proportion of the total fall population observed in each stratum from the similarly timed, independent aerial survey count (USFWS unpubl. data). The resulting weighted stratum estimates were then summed to yield the count-weighted estimate
+
+$R^\prime = \sum_s \frac{c_sR_s}{C}$, 
+
+where $C = \sum_s {c_s}$. The standard deviation of $R^\prime$ was calculated as 
+
+$SD(R^\prime) = \sqrt {\sum_s  \left( \frac{c_s}{C} \right)^2 Var(R_s)}$.  
+
 
 \setlength{\parskip}{4ex}
 \textbf{RESULTS}\break
@@ -221,7 +262,7 @@ lines(as.numeric(names(ar2)), ar2,col="blue")
 The self-weighted estimate was 48% below the long-term (1985-2015) mean of `r round(mean(ar2),3)` and the lowest ratio observed since the survey began in 1985 (Fig. 4).  Although the 2016 survey was 14 days earlier (i.e., Day 259) than the mean day of year of previous surveys (i.e., Day `r round(mean(hatch$meandoyphotos),0)`), the estimated mean age of juveniles was only 5 days younger than the estimated mean age of young for all surveys (i.e., `r c.meanage` vs. `r round(mean(hatch$meanage),0)` days). Survey timing was conducive to confidently distinguish between juvenile and adult head plumage in photographs. Supporting data from the 2016 Yukon-Kuskokwim Delta Nest Plot Survey showed that emperor geese produced low numbers of nests and eggs, had poor nest success and very low clutch sizes (Fischer et al. 2017).  The current Pacific Flyway management objective is a minimum ratio of 0.20 (Pacific Flyway Council 2016).
 
 \textbf{ACKNOWLEDGEMENTS}\break
-Funding for this survey was provided by the U.S. Fish and Wildlife Service (USFWS). We thank the staff of the Alaska Peninsula/Becharof and Izembek National Wildlife Refuges for providing essential logistic support.  We also thank Chuck Frost and Eric Osnas for data analyses and reporting assistance.
+Funding for this survey was provided by the U.S. Fish and Wildlife Service (USFWS). We thank the staff of the Alaska Peninsula/Becharof and Izembek National Wildlife Refuges for providing essential logistic support.  We also thank Chuck Frost and Erik Osnas for data analyses and reporting assistance. This document was produced using knitr (yihui.name/knitr) from RStudio (www.rstudio.com). Full report code, including MikTex (miktex.org) and R (www.r-project.org), is available at GitHub (github.com/bsshults/EMGOAgeRatio).
 
 \newpage
 \textbf{REFERENCES}
@@ -229,6 +270,8 @@ Funding for this survey was provided by the U.S. Fish and Wildlife Service (USFW
 \setlength{\parindent}{-0.2in}
 \setlength{\leftskip}{0.2in}
 \setlength{\parskip}{1ex}
+
+Cochran, W. G. 1963.  Sampling Techniques, second edition. John Wiley and Sons, Inc., New York.  
 
 Fischer, J. B., Wlliams, A. R., and R. A. Stehn.  2017.  Nest population size and potential production of geese and spectacled eiders on the Yukon-Kuskokwim Delta, Alaska, 1985-2016.  Unpubl. Rep., U.S. Fish and Wildlife Service, Anchorage, AK.
 
@@ -277,11 +320,13 @@ table1 <- data.frame(
   "Total Geese" = apply(n.total, 2, sum, na.rm=TRUE),
   "Self-weighted Estimate" = ar2,
   "SE2" = as.numeric(se2),
-  "Count-weighted Estimate" = rep(NA, n.rows),
-  "SE" = rep(NA, n.rows)
+  "Count-weighted Estimate" = c(ar.cw, NA),
+  "SE" = c(se.cw, NA)
 )
+
 colnames(table1) <- c("**Year**", "**Number of\nPhotos**", "**Mean DOY\nPhoto**", "**Mean DOY\nHatch**", "**Mean Age\nof young\n(days)**", "**Total\nJuveniles**", "**Total\nGeese**", "**Self-weighted\nEstimate**", "**SE**", "**Count-weighted Estimate**", "**SE**")
 row.names(table1) <- NULL
+
 ```
 
 ```{r}
