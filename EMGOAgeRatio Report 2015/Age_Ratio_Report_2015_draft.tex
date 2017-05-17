@@ -1,0 +1,2625 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{caption}
+\captionsetup{justification   = raggedright, singlelinecheck = false}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\setlength{\parskip}{4ex}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyfoot[R]{\scriptsize USFWS, MBM-Emperor Goose Age Ratio, 2015}
+\renewcommand{\footrulewidth}{1pt} \renewcommand{\headrulewidth}{0pt}
+
+\textbf{\LARGE{Emperor Goose (\textit{Chen canagica}) Photographic Age-Ratio Survey, 2015}}
+\hfill
+
+\setstretch{1.0} \normalsize
+\textbf{Brad S. Shults} and \textbf{Dennis K. Marks}\newline U.S. Fish
+and Wildlife Service, Migratory Bird Management, 1011 E. Tudor Rd.,
+Anchorage, AK 99503
+
+\textbf{ABSTRACT:} We used aerial photography to estimate the annual
+proportion of hatching-year (HY) emperor geese (\textit{Chen canagica})
+in the fall staging population along the shorelines of seven lagoons on
+the north side of the Alaska Peninsula. Geese were photographed between
+01 and 06 October 2015. We classified HY vs.~adult geese based on the
+gray/black head and neck plumage evident on HY birds. In 2015, we
+classified 30,391 geese from 484 photographs. We counted 4,388 HY birds
+resulting in a self-weighted ratio estimate of 0.144 (SE = 0.006) and a
+count-weighted estimate of 0.142 (SE = 0.008).
+
+\textbf{KEY WORDS: }aerial survey, Alaska, emperor goose,
+\textit{Chen canagica}, age-ratio, photography, Alaska Peninsula
+
+\hfill\textit {May 2017}
+
+\textbf{INTRODUCTION}\break
+From mid-September through October, most of the emperor goose
+(\textit{Chen canagica}) population congregates in 7 lagoons on the
+north side of the Alaska Peninsula (Petersen and Gill 1982; Fig. 1).
+Staging geese provide an opportunity to sample the population to
+determine an index of annual productivity because hatching year (HY)
+emperor geese retain gray/black plumage on their head and neck that
+contrasts with the complete white head plumage of adult geese (Fig. 2
+)(Pyle 2008, Baldassare 2014). This plumage difference is used to age
+classify geese (i.e.~HY vs.~adult) in aerial photographs.
+
+\begin{figure}[h]
+\includegraphics{figure_1_lagoon_map_300dpi.jpg}
+\caption{Seven primary fall staging areas for emperor geese along the north side of the Alaska Peninsula where photographs were taken.}
+\end{figure}
+
+\begin{figure}[h] 
+\includegraphics{IMG_8554_anno.jpg}
+\caption{Example survey photograph used to distinguish hatching-year and adult emperor geese based on head plumage characteristics.}
+\end{figure}
+
+The objective of this study was to calculate an annual estimate of the
+proportion of HY emperor geese in the fall staging population. This estimate provides an index to annual production that is defined as the number
+of hatched young that survive until October and is expressed as a
+proportion of the total birds classified. In combination with a fall
+population abundance survey to weight the lagoon-specific age-ratio
+estimates, these data are necessary to monitor annual productivity. The
+annual age ratio of emperor geese has been monitored with this survey
+since 1985.
+
+\textbf{METHODS}\break
+We conducted the photographic age-ratio survey in seven primary sites
+along the north side of the Alaska Peninsula including Egegik Bay,
+Ugashik Bay, Cinder River, Port Heiden, Seal Islands, Nelson Lagoon, and
+Izembek Lagoon (Fig. 1). We attempted to fly the aerial photographic
+survey when HY geese were approximately 100 days of age to ensure that
+we could differentiate between the age classes before the juveniles
+acquired their adult, head plumage. In 2015, the survey was flown in an
+amphibious-equipped Cessna 206 (N77554). The aircraft was flown at
+approximately 500-1000 feet above the ground to locate geese. After
+spotting groups of emperor geese on beaches or flying, the pilot
+positioned the aircraft to arc around the flock while attempting to
+provide the best possible distance, angle, and light for the
+photographer who was located directly behind the pilot. Aircraft
+maneuvering decisions were made when a flock was first spotted and
+verbally coordinated with the photographer to maximize photographic
+opportunities. Once found, we typically descended to 300-400 feet above
+the ground to photograph flocks. The photographer captured digital
+images of geese through the aircraft's window port with a hand-held
+digital SLR camera. Taking photographs from the left rear-seat improved
+communication between the pilot (i.e., seated in the left front seat)
+and photographer making it easier to appropriately position the aircraft
+relative to the flock.
+
+\textbf{Camera Setting--} We used a Canon\copyright\hspace{1ex} EOS
+5DS-R camera with a Canon\copyright\hspace{1ex} image-stabilized 70-200
+mm, f4.0 lens. The LCD display allowed for a rapid assessment of image
+quality. Image size was 5616 x 3744 pixels, and file size ranged from
+5-12 megabytes. The photographer recorded the: Date, Time, Start
+Photograph \#, End Photograph \# , and Location (e.g., 9/27/11, 16:25
+4927-4970, Egegik Bay). Camera settings for the Canon 5D were:
+
+\begin{enumerate}
+\setlength{\parskip}{1ex}
+   \item Camera set to take the highest quality JPG image.
+   \item AF mode set to A1 Servo.
+   \item Mode set to shutter priority (TV) and shutter speed set to 1250.
+   \item Metering mode set to Evaluative Metering.
+   \item ISO set at 800.
+\end{enumerate}
+
+\textbf{Photo Analysis--} We viewed digital images in Adobe
+Photoshop\copyright\hspace{1ex}on a computer with dual 19-inch LCD
+monitors set at 1280 x 1024 resolution. We used a grid overlay for each
+photograph and magnified the image as needed to adequately distinguish
+the age class of each goose. We used the \textit{Count Tool} feature in
+Photoshop\copyright\hspace{1ex} to mark each goose as adult,
+juvenile, or unknown (Fig. 3). We did not classify geese on any
+photographs where the majority of bird images were too small or
+excessively blurred to reliably determine age class.
+
+\begin{figure}
+\centering
+\begin{subfigure}[h]{0.9\textwidth}
+\includegraphics[width=1\linewidth]{figure3a.jpg}
+\end{subfigure}
+\\
+\begin{subfigure}[h]{0.9\textwidth}
+\includegraphics[width=1\linewidth]{figure3b.jpg}
+\end{subfigure}
+\caption{Typical photograph with grid overlay (top) and count tool labels (bottom).}
+\end{figure}
+
+\textbf{Statistical Analysis--} Stehn and Wilson (2014) describe 2
+different estimators to determine the age-ratio for emperor geese (i.e.,
+self-weighted and count-weighted). The count-weighted estimate relies on
+an annual, fall population count of emperor geese in the 7 sampling
+areas along the Alaska Peninsula.
+
+\setlength{\parskip}{1ex} \setlength{\parindent}{4em}
+\underline{\textit{Self-Weighted Estimate}} \setlength{\parindent}{0in}
+The self-weighted estimate is simply the ratio of total HY to total
+geese counted across all photographs:\\
+
+\begin{center}
+$R = \frac{ \sum_{ij} J_{ij} }{ \sum_{ij} N_{ij} }$.
+\end{center}
+
+\medskip
+Where \(J\) is the number of juveniles counted, \(N\) is the total
+ number of emperor geese counted (i.e., adult + juvenile), \(i\) is the
+index for strata (\(i = \{1, ..., 7\}\)), and \(j\) is the index for
+photograph (\(j = \{1, ..., P_i\}\) where \(P_i\) is the number of
+photographs per stratum. The standard error (SE) of this ratio
+estimate was calculated as in Cochran (1963; p.~65, eq. 3.26): \medskip
+
+\begin{center}
+$SE(R) = \sqrt { (\frac{1 - f}{P\hat{N}^2}) \frac{\sum_{ij} J_{ij}^2 - 2R \sum_{ij} J_{ij} N_{ij} + R^2 \sum_{ij}N_{ij}^2}{(P - 1)} }$.
+\end{center}
+
+\medskip
+where \(P = \sum_i P_i\), \(\hat{N}=\sum_i{N_i}/P\), and the sampling
+fraction, \(f\), was assumed to be near zero (i.e., \(f = 0\) for the
+sample population vs. \(f = 1\) when the population is censused and
+variance = 0).
+
+The self-weighted estimate is appropriate when the sampling intensity or
+total birds counted in photographs within each stratum is proportional
+to the population size estimated within each stratum from the
+independent, fall aerial population survey. In short, the number of
+photographs taken in each stratum should be proportional to the number
+of geese in each stratum.
+
+\setlength{\parskip}{1ex} \setlength{\parindent}{4em}
+\underline{\textit{Count-Weighted Estimate}} \setlength{\parindent}{0in}
+The mean ratio of juveniles to total geese was calculated, as above, for
+each of the seven strata, \(R_i\). The resulting seven strata ratios
+were then weighted by the proportion of the total fall population
+observed in each stratum from the similarly timed, independent aerial
+survey count (Wilson 2017). The resulting weighted stratum estimates
+were then summed to yield the count-weighted estimate: \medskip
+
+\begin{center}
+$R^\prime = \sum_i \frac{c_iR_i}{C}$, 
+\end{center}
+
+\medskip
+where the population total \(C\) is calculated as \(C = \sum_i {c_i}\)
+and \({c_i}\) is the population count in each stratum. The standard
+error (SE) of \(R^\prime\) was calculated as: \medskip
+
+\begin{center}
+$SE(R^\prime) = \sqrt {\sum_i  \left( \frac{c_i}{C} \right)^2 Var(R_i)}$.  
+\end{center}
+
+\smallskip
+
+\setlength{\parskip}{4ex} \textbf{RESULTS}\newline
+Flights were conducted between 01 and 06 October 2015 with pilot B.
+Shults and photographer D. Marks (Table 1). Survey timing was
+approximately 111 days after the average hatch date for emperor geese on
+the Yukon-Kuskokwim delta (Fischer et al. 2016). Total flight time to
+complete the survey between King Salmon and Cold Bay was approximately
+10 hrs.
+
+We classified 30,391 geese (\(\bar{x}\)=12,223, 1985-2015) on 484
+photographs (\(\bar{x}\)=403, 1985-2015) (Table 2). We counted an
+average of 62.8 birds/photograph (\(\bar{x}\)=30.3, 1985-2015). We
+identified 4,388 juvenile geese resulting in a self-weighted juvenile :
+total geese ratio of 0.144 (Fig. 4), and a count-weighted juvenile :
+total geese ratio of 0.142 (Fig. 5). For comparison, the long-term
+(i.e., 1985-2014) self-weighted and count-weighted estimates have
+averaged 0.192 and 0.189, respectively. For lagoons where geese were
+observed, ratio estimates varied between 0.102 and 0.239 (Table 3).
+Total number of geese counted at each lagoon (1985-2015) are summarized
+in Table 4.
+
+\textbf{DISCUSSION}\newline
+The 2015 self-weighted estimate (i.e., 0.144) was 23\% below the
+long-term (1985-2014) mean of 0.192 (Fig. 4) and was not notably
+different than the 2015 count-weighted estimate (i.e., 0.142). The mean
+calendar day of the 2015 survey period was 5 days (i.e., Day 278) later
+than the mean calendar day of previous surveys (i.e., Day 273). The mean
+age of juveniles during the survey period was 111 days based on hatching
+date estimated by Fischer et al. (2016) and was 11 days older than the estimated mean age of juveniles for all
+surveys (i.e., 100 days; 1985-2014). Corresponding data collected on the
+Yukon-Kuskokwim delta by Fischer et al. (2016) showed poor nest success
+(active nests/total nests) and very low clutch sizes (active eggs/active
+nest) in 2015 relative to long-term averages. In addition, because
+juveniles were nearly 2 weeks older, juvenile head plumage was difficult
+to identify in the photographs. The resulting ratios could be biased low
+because some juvenile geese may have been classified as adults if their
+head plumage had nearly completed the molt to white feathers. We
+recommend that the timing of the age-ratio survey be adjusted annually
+to coincide with a juvenile mean age estimate of 100 days determined by
+the current year mean hatching date estimate obtained from the
+Yukon-Kuskokwim delta nest plot survey.
+
+\textbf{ACKNOWLEDGEMENTS}\newline
+Funding for this survey was provided by the U.S. Fish and Wildlife
+Service (USFWS). We thank the staff of the Alaska Peninsula/Becharof and
+Izembek National Wildlife Refuges for providing essential logistic
+support. We also thank Chuck Frost and Erik Osnas for data analyses and
+reporting assistance. This document was produced using knitr
+(yihui.name/knitr) from RStudio (www.rstudio.com). Full report code,
+including MikTex (miktex.org) and R (www.r-project.org), is available at
+GitHub (github.com/bsshults/EMGOAgeRatio/EMGOAgeRatio Report 2015).
+
+\textbf{REFERENCES}
+
+\setlength{\parindent}{-0.2in} \setlength{\leftskip}{0.2in}
+\setlength{\parskip}{1ex} Baldassarre, G. 2014. Ducks, Geese, and Swans
+of North America. Johns Hopkins University Press, Baltimore, Maryland,
+USA.
+
+Cochran, W. G. 1963. Sampling Techniques, second edition. John Wiley and
+Sons, Inc., New York, USA.
+
+Fischer, J. B., A. R. Williams, and R. A. Stehn. 2016. Nest population
+size and potential production of geese and spectacled eiders on the
+Yukon-Kuskokwim Delta, Alaska, 1985-2015. Unpublished Report, U. S. Fish
+and Wildlife Service, Anchorage, Alaska, USA.
+
+Petersen, M. R. and R. E. Gill, Jr. 1982. Population and status of
+emperor geese along the north side of the Alaska Peninsula. Wildfowl 33:
+31-38.
+
+Pyle, P. 2008. Identification guide to North American birds. Part 2:
+Anatidae to Alcidae. Slate Creek Press, Point Reyes Station, California,
+USA.
+
+Stehn, R. A. and H. M. Wilson. 2014. Monitoring emperor geese by age
+ratio and survey counts, 1985-2013. Unpublished Report, U. S. Fish and
+Wildlife Service, Anchorage, Alaska, USA.
+
+Wilson, H. M. 2017. Aerial survey of emperor geese and other waterbirds
+in southwestern, Alaska, fall 2015. Unpublished Report, U. S. Fish and
+Wildlife Service, Anchorage, Alaska, USA.
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{Age_Ratio_Report_2015_draft_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{Self-weighted estimates and standard errors of the proportion
+of juveniles, 1985-2015.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{Age_Ratio_Report_2015_draft_files/figure-latex/unnamed-chunk-3-1.pdf}
+\caption{Count-weighted estimates and standard errors of the proportion
+of juveniles, 1985-2015.}
+\end{figure}
+
+\setstretch{1} \newpage
+
+\normalsize
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Annual Survey Crew and Timing, 1985-2015.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.38\columnwidth}\raggedright\strut
+\textbf{Photograph Dates}\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+\textbf{Pilot}\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\textbf{Photographer}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.38\columnwidth}\raggedright\strut
+\textbf{Photograph Dates}\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+\textbf{Pilot}\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\textbf{Photographer}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1985\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+24 Sep; 02,03, 06, 10 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1986\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+30 Sep; 01,02, 04, 05, 11, 13, 15 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1987\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+16,24, 26 Sep; 06,07, 08, 10 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1988\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+07,21, 25, 26, 27, 30 Sep; 03 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1989\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+23,25, 28 Sep; 03 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1990\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+28,29, 30 Sep; 02 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1991\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+28,29 Sep; 01,03, 04 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1992\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26,27, 30 Sep; 03,04 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+M.R. Petersen\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1993\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+01,02, 03 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.I. Butler Jr.\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+G.R. Balogh\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1994\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26,27, 28, 29 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+G.R. Balogh\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1995\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+G.R. Balogh\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1996\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+23,25, 26 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+T.J. Tiplady\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1997\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+30 Sep; 01 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+T.J. Tiplady\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1998\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+29 Sep; 01 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+T.J. Tiplady\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+1999\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+28 Sep; 01 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+T.J. Tiplady\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2000\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+25,28, 29 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26 Sep; 01 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+01,02, 04 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+24,25, 27 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+04,06 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+02,03, 06 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+28,29 Sep; 02,03 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+K.S. Bollinger\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+C.P. Dau\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2007\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+27,29 Sep; 02,03 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2008\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26,27, 28 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+P.A. Anderson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2009\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+30 Sep; 02,03, 04, 06, 08 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+H.M. Wilson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+25,26 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+H.M. Wilson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2011\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+27,28, 29 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+H.M. Wilson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2012\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+28,29 Sep\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+H.M. Wilson\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2013\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+20 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+H.M. Wilson\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+C.P. Dau\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2014\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+26,27, 28 Sep; 04 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+B.S. Shults\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+W.W. Larned\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+2015\strut
+\end{minipage} & \begin{minipage}[t]{0.38\columnwidth}\raggedright\strut
+01,04, 06 Oct\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+B.S. Shults\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+D. Marks\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\setlength{\parindent}{0in} \setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt} \noindent
+\newpage
+
+\begin{longtable}[]{@{}rrrrrrrrrrr@{}}
+\caption{Sample size, survey timing, and proportion of juvenile emperor
+geese based on self-weighted and count-weighted estimates , Alaska
+Peninsula, 1985-2015.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\raggedleft\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Number of Photos}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean DOY Photo}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean DOY Hatch$^1$}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean Age of young (days)}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Total Juveniles}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft\strut
+\textbf{Total Geese}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Self-weighted Estimate}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft\strut
+\textbf{SE}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Count-weighted Estimate$^2$}\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft\strut
+\textbf{SE}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\raggedleft\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Number of Photos}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean DOY Photo}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean DOY Hatch}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Mean Age of young (days)}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft\strut
+\textbf{Total Juveniles}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft\strut
+\textbf{Total Geese}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Self-weighted Estimate}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedleft\strut
+\textbf{SE}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Count-weighted Estimate}\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedleft\strut
+\textbf{SE}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1985\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+155\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+277\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+182\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+95\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+536\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+3,193\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.168\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.017\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.154\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.024\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1986\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+311\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+278\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+178\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,659\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+6,380\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.260\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.013\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.254\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.015\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1987\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+703\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+274\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+178\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+96\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,417\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+10,177\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.237\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.228\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1988\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+483\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+269\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+174\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+95\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,747\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+11,180\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.246\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.244\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1989\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+390\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+269\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+181\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+88\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,684\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+12,718\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.211\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.011\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.219\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.011\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1990\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+474\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+273\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+172\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+101\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+3,418\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+13,541\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.252\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.241\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1991\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+412\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+273\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+171\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+102\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+3,433\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+14,569\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.236\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.231\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1992\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+403\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+274\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+182\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+92\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,154\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+14,832\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.145\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.156\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1993\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+255\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+275\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+172\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+103\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,372\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+5,735\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.239\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.013\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.243\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.013\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1994\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+479\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+270\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+170\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+3,974\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+16,881\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.235\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.227\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1995\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+361\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+269\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+169\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,947\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+11,664\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.253\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.012\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.257\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.012\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1996\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+182\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+268\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+169\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+99\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,847\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+10,793\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.171\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.182\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.016\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1997\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+205\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+273\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+166\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+107\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,183\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+11,138\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.106\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.107\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1998\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+336\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+175\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+97\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,185\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+16,544\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.132\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.116\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+1999\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+392\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+178\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+94\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,155\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+13,489\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.160\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.173\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2000\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+263\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+176\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+96\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,016\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+7,748\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.131\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.012\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.114\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+365\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+271\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+178\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+93\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,410\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+11,186\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.126\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.115\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+402\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+275\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+169\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+106\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,174\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+6,458\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.182\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.178\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+421\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+268\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+166\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+102\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+760\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+8,686\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.087\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.006\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.094\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+370\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+278\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+165\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+113\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+642\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+6,237\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.103\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.006\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.112\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+500\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+276\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+168\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+108\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,274\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+6,563\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.194\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.015\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.189\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.011\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+469\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+175\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+97\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+3,561\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+9,773\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.364\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.352\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.013\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2007\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+398\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+273\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+170\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+103\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+1,796\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+12,134\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.148\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.174\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2008\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+625\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+270\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+174\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+96\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,587\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+10,207\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.253\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.248\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2009\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+607\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+276\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+175\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+101\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,081\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+12,404\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.168\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.157\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+436\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+269\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+171\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+98\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+4,439\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+20,876\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.213\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.192\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2011\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+441\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+271\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+183\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+88\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+3,996\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+19,432\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.206\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.195\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2012\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+378\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+164\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+108\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,367\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+13,109\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.181\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.184\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.021\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2013\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+224\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+293\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+181\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+112\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,216\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+11,269\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.197\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.009\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.194\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.010\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2014\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+570\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+271\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+166\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+105\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+2,839\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+19,619\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.145\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.151\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.007\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedleft\strut
+2015\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+484\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+278\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+167\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+111\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft\strut
+4,388\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+30,391\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.144\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedleft\strut
+0.006\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.142\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedleft\strut
+0.008\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+$^1$ From Fischer et al. 2016.
+\newline
+$^2$ Based on Wilson 2017.
+
+\newpage
+
+\noindent
+
+\begin{longtable}[]{@{}rrrrrrrr@{}}
+\caption{Estimates of the proportion of juveniles at each staging area
+along the Alaska Peninsula, 1985-2015.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Egegik}\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedleft\strut
+\textbf{Ugashik}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Cinder River}\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedleft\strut
+\textbf{Port Heiden}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Seal Islands}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Nelson Lagoon}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Izembek}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Egegik}\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedleft\strut
+\textbf{Ugashik}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Cinder River}\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedleft\strut
+\textbf{Port Heiden}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Seal Islands}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Nelson Lagoon}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Izembek}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1985}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.087\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.218\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.235\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.153\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.175\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1986}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.174\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.268\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.277\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.156\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.164\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.337\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.317\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1987}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.046\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.251\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.195\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.220\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.261\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.230\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1988}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.253\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.167\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.273\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.239\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.198\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.254\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.232\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1989}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.242\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.092\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.196\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.191\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.130\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.282\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.221\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1990}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.156\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.171\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.339\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.224\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.232\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.247\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.166\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1991}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.199\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.106\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.302\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.237\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.207\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.225\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.213\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1992}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.076\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.089\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.181\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.122\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.069\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.176\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.233\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1993}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.094\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.211\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.231\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.171\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.148\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.296\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.298\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1994}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.236\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.192\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.235\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.248\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.261\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.219\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.166\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1995}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.256\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.128\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.289\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.235\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.216\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.256\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.259\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1996}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.269\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.150\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.165\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.177\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.225\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.156\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1997}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.148\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.037\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.103\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.142\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.102\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.092\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.083\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1998}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.192\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.141\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.114\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.150\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.067\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.103\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1999}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.554\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.070\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.157\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.093\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.202\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.170\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2000}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.095\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.055\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.189\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.113\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.087\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.061\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.254\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2001}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.179\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.144\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.149\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.038\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.113\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.104\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.143\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2002}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.189\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.271\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.176\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.178\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.192\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.170\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.172\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2003}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.067\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.051\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.120\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.048\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.136\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.069\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.051\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2004}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.125\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.116\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.102\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.062\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.148\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.117\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.081\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2005}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.091\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.169\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.120\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.138\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.234\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.198\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.378\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2006}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.259\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.431\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.370\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.297\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.300\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.392\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.377\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2007}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.217\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.096\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.164\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.084\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.250\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.157\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.243\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2008}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.254\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.224\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.316\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.303\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.207\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.244\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.267\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2009}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.297\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.074\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.238\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.137\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.134\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.127\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.172\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2010}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.297\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.061\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.251\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.200\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.139\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.207\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.163\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2011}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.26\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.169\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.229\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.191\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.184\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.192\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.121\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2012}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.185\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.237\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.135\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.231\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.180\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.190\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.183\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2013}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.023\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.100\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.215\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.186\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.254\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.094\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2014}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.159\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.059\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.177\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.076\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.169\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.141\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.171\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2015}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.163\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+0.239\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.152\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+0.143\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+0.102\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+0.156\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+0.130\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\setlength{\parindent}{0in} \setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt} \noindent
+\newpage
+
+\begin{longtable}[]{@{}rrrrrrrr@{}}
+\caption{Total emperor geese photographed and classified at each staging
+area along the Alaska Peninsula, 1985-2015.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Egegik}\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedleft\strut
+\textbf{Ugashik}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Cinder River}\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedleft\strut
+\textbf{Port Heiden}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Seal Islands}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Nelson Lagoon}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Izembek}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Egegik}\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedleft\strut
+\textbf{Ugashik}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Cinder River}\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedleft\strut
+\textbf{Port Heiden}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft\strut
+\textbf{Seal Islands}\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedleft\strut
+\textbf{Nelson Lagoon}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedleft\strut
+\textbf{Izembek}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1985}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+NA\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+NA\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+334\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+156\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+412\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,106\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,185\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1986}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+362\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,038\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+512\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,060\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,317\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+819\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1987}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+109\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,845\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,721\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+912\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,659\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+903\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1988}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+166\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+354\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,014\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,229\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,342\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,605\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+470\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1989}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+33\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+573\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,763\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,210\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,822\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,976\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,341\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1990}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+180\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+685\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,351\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,842\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,364\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,028\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,091\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1991}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+322\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+142\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,045\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,170\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+3,589\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,069\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,232\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1992}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+381\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+418\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,296\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,430\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,888\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,681\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+738\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1993}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+117\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+128\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,327\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+632\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+851\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,025\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+655\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1994}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+440\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+208\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+6,058\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,077\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+4,112\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,884\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,102\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1995}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+313\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+313\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,636\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,074\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,201\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,989\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,138\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1996}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+668\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+46\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,740\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,887\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+930\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,051\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,471\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1997}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+480\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+543\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,811\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,356\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,156\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,617\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,175\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1998}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+558\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+NA\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+8,557\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,092\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+3,004\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,624\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+709\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{1999}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+395\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+NA\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,986\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+3,615\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,289\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,089\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,115\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2000}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+529\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+236\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,345\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,013\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+916\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,938\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+771\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2001}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+610\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+582\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,219\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+960\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,031\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,965\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+819\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2002}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+90\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+96\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,868\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+650\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,133\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,203\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+418\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2003}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+600\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+215\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,299\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,364\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,251\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,503\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+454\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2004}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+200\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+242\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,602\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+706\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+736\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,387\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,364\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2005}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+374\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+326\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,365\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,634\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+852\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+918\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,094\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2006}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+158\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+130\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,534\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,083\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+830\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,801\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,237\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2007}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+568\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+272\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,712\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+4,272\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+1,322\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,494\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+494\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2008}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+731\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+675\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+1,442\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+955\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,363\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,736\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,305\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2009}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+626\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+257\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,653\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,524\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,382\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,988\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,974\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2010}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+2,109\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+279\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+6,927\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+1,588\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+4,122\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,932\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+919\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2011}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,299\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+727\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+6,697\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,359\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+2,077\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+5,735\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+538\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2012}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+671\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+645\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,383\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,176\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+4,385\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+327\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+1,522\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2013}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+NA\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+43\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+502\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+2,140\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+5,424\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+2,477\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+683\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2014}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+793\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+409\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+3,081\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+3,099\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+3,649\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+5,908\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+2,680\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+\textbf{2015}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+2,229\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedleft\strut
+419\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+11,443\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedleft\strut
+4,420\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft\strut
+4,053\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft\strut
+4,929\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedleft\strut
+2,898\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+\end{document}
